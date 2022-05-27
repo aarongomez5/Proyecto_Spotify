@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" styleClass="color_primario" stylesheets="@../../../css/estilos.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spotify.ControllerInicioSesion">
+    <children>
+      <Pane layoutX="422.0" layoutY="-1.0" prefHeight="890.0" prefWidth="471.0" styleClass="color_secundario" stylesheets="@../../../css/estilos.css">
+         <children>
+            <Label fx:id="error" layoutX="43.0" layoutY="254.0" text="Has introducido un dato incorrecto" textFill="RED" visible="false">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+              <ImageView fitHeight="110.0" fitWidth="162.0" layoutX="186.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@../../../img/kisspng-logo-spotify-issuu-soundcloud-spotify-logo-5b2a6589937ea5.8739811215295051616042.png" />
+                  </image>
+              </ImageView>
+              <Label layoutX="42.0" layoutY="371.0" text="Usuario" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+              <Label layoutX="33.0" layoutY="481.0" text="Contraseña" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+              <PasswordField fx:id="contraseña" layoutX="186.0" layoutY="477.0" styleClass="buscar" />
+              <TextField fx:id="usuario" layoutX="186.0" layoutY="367.0" styleClass="buscar" stylesheets="@../../../css/estilos.css" />
+              <Button fx:id="boton" layoutX="193.0" layoutY="668.0" mnemonicParsing="false" onAction="#inicio" styleClass="premium" stylesheets="@../../../css/estilos.css" text="Iniciar Sesion" />
+            <Label layoutX="125.0" layoutY="579.0" onMouseClicked="#registro" prefHeight="33.0" prefWidth="229.0" text="¿No tienes una cuenta? Registrate." textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+    </children>
+</Pane>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="890.0" prefWidth="1315.0" stylesheets="@../../../css/estilos.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spotify.ControllerPremium">
+    <children>
+      <ImageView fitHeight="799.0" fitWidth="1264.0" layoutX="26.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/premium.jpg" />
+         </image>
+      </ImageView>
+        <Button fx:id="primero" layoutX="59.0" layoutY="660.0" mnemonicParsing="false" onAction="#primero" prefHeight="62.0" prefWidth="243.0" style="-fx-background-color: transparent;" />
+        <Button fx:id="segundo" layoutX="382.0" layoutY="638.0" mnemonicParsing="false" onAction="#segundo" prefHeight="86.0" prefWidth="243.0" style="-fx-background-color: transparent;" />
+        <Button fx:id="cuarto" layoutX="1030.0" layoutY="647.0" mnemonicParsing="false" onAction="#cuarto" prefHeight="72.0" prefWidth="243.0" style="-fx-background-color: transparent;" />
+        <Button fx:id="tercero" layoutX="705.0" layoutY="660.0" mnemonicParsing="false" onAction="#tercero" prefHeight="62.0" prefWidth="243.0" style="-fx-background-color: transparent;" />
+      <Label layoutX="368.0" layoutY="21.0" text="Confirma tu nombre de usuario:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usuario" layoutX="752.0" layoutY="22.0" />
+    </children>
+   <styleClass>
+      <String fx:value="color-fondo" />
+      <String fx:value="color_primario" />
+   </styleClass>
+</AnchorPane>

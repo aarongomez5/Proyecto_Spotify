@@ -1,0 +1,27 @@
+.color_primario {
+    -fx-background-color: #181818;
+}
+
+.color_secundario {
+    -fx-background-color: #121212;
+}
+
+.borde_superior{
+    -fx-border-color: #A1A1A1;
+    -fx-border-width: 1 0 0 0;
+}
+
+.buscar{
+    -fx-background-color: #fff;
+    -fx-background-radius: 100;
+}
+
+.upgrade-button{
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-border-color: #fff;
+    -fx-border-radius: 50;
+}
+
+.scroll-pane > .viewport{
+    -fx-background-color: #181818;
+}

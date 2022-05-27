@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" styleClass="color_primario" stylesheets="@../../../css/estilos.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spotify.HelloController">
+    <left>
+        <VBox focusTraversable="true" prefHeight="200.0" prefWidth="235.0" spacing="20.0" styleClass="color_secundario" stylesheets="@../../../css/estilos.css" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../img/ic_more.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                    </VBox.margin>
+                </ImageView>
+                <VBox prefHeight="182.0" prefWidth="235.0" spacing="10.0">
+                    <children>
+                        <HBox fx:id="inicio" alignment="CENTER" onMouseClicked="#click" onMouseEntered="#senyalado" onMouseExited="#sinsenyalar" prefHeight="50.0" prefWidth="200.0" spacing="20.0" stylesheets="@../../../css/estilos.css">
+                            <children>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../img/ic_home.png" />
+                                    </image>
+                                </ImageView>
+                                <Label mouseTransparent="true" prefHeight="21.0" prefWidth="101.0" text="Inicio" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+                            <children>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../img/ic_browse.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="21.0" prefWidth="101.0" text="Explorar" textFill="#a1a1a1">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+                            <children>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../img/ic_radio.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="21.0" prefWidth="101.0" text="Radio" textFill="#a1a1a1">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox focusTraversable="true" prefHeight="292.0" prefWidth="235.0">
+                    <children>
+                        <Label prefHeight="48.0" prefWidth="192.0" text="TU BIBLIOTECA" textFill="#a1a1a1">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </Label>
+                  <HBox fx:id="parati" onMouseClicked="#click" onMouseEntered="#senyalado" onMouseExited="#sinsenyalar" prefHeight="40.0" prefWidth="195.0">
+                     <children>
+                              <Label mouseTransparent="true" prefHeight="40.0" prefWidth="218.0" text="   Para ti" textFill="#a1a1a1">
+                                  <font>
+                                      <Font name="System Bold" size="18.0" />
+                                  </font>
+                              </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="reciente" onMouseClicked="#click" onMouseEntered="#senyalado" onMouseExited="#sinsenyalar" prefHeight="40.0" prefWidth="195.0">
+                     <children>
+                              <Label mouseTransparent="true" prefHeight="40.0" prefWidth="192.0" text="   Escuchado recientemente" textFill="#a1a1a1">
+                                  <font>
+                                      <Font name="System Bold" size="18.0" />
+                                  </font>
+                              </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="megusta" onMouseClicked="#click" onMouseEntered="#senyalado" onMouseExited="#sinsenyalar" prefHeight="40.0" prefWidth="195.0">
+                     <children>
+                              <Label mouseTransparent="true" prefHeight="40.0" prefWidth="206.0" text="   Canciones que te gustan" textFill="#a1a1a1">
+                                  <font>
+                                      <Font name="System Bold" size="18.0" />
+                                  </font>
+                              </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="album" onMouseClicked="#click" onMouseEntered="#senyalado" onMouseExited="#sinsenyalar" prefHeight="40.0" prefWidth="195.0">
+                     <children>
+                              <Label mouseTransparent="true" prefHeight="40.0" prefWidth="221.0" text="   Álbum" textFill="#a1a1a1">
+                                  <font>
+                                      <Font name="System Bold" size="18.0" />
+                                  </font>
+                              </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="artistas" onMouseClicked="#click" onMouseEntered="#senyalado" onMouseExited="#sinsenyalar" prefHeight="40.0" prefWidth="195.0">
+                     <children>
+                              <Label mouseTransparent="true" prefHeight="40.0" prefWidth="218.0" text="   Artistas" textFill="#a1a1a1">
+                                  <font>
+                                      <Font name="System Bold" size="18.0" />
+                                  </font>
+                              </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="podcast" onMouseClicked="#click" onMouseEntered="#senyalado" onMouseExited="#sinsenyalar" prefHeight="40.0" prefWidth="195.0">
+                     <children>
+                              <Label mouseTransparent="true" prefHeight="40.0" prefWidth="268.0" text="   Podcasts" textFill="#a1a1a1">
+                                  <font>
+                                      <Font name="System Bold" size="18.0" />
+                                  </font>
+                              </Label>
+                     </children>
+                  </HBox>
+                    </children>
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                </VBox>
+                <Label onMouseClicked="#listarep" prefHeight="48.0" prefWidth="207.0" text="LISTAS DE REPRODUCCIÓN" textFill="#a1a1a1">
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font>
+                </Label>
+                <Pane prefHeight="12.0" prefWidth="235.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="tablaplaylist" prefHeight="59.0" prefWidth="235.0" styleClass="color_secundario" stylesheets="@../../../css/estilos.css" visible="false">
+                    <columns>
+                      <TableColumn fx:id="col_playlist" prefWidth="234.0" text="PLAYLIST" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children></Pane>
+                <HBox fx:id="playlist" alignment="CENTER" onMouseClicked="#lista" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="borde_superior" stylesheets="@../../../css/estilos.css">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../img/ic_add.png" />
+                            </image>
+                        </ImageView>
+                        <Label prefHeight="40.0" prefWidth="136.0" text="Nueva playlist" textFill="#a1a1a1">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="1080.0" spacing="20.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                    <graphic>
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../img/ic_back.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                    <graphic>
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../img/ic_forward.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="35.0" prefWidth="215.0" styleClass="buscar" stylesheets="@../../../css/estilos.css">
+                            <children>
+                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../img/ic_search.png" />
+                                    </image>
+                                </ImageView>
+                                <TextField prefHeight="31.0" prefWidth="173.0" promptText="Search" style="-fx-background-color: transparent;" />
+                            </children>
+                        </HBox>
+                        <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="premium" mnemonicParsing="false" onAction="#premium" prefHeight="25.0" prefWidth="120.0" styleClass="upgrade-button" stylesheets="@../../../css/estilos.css" text="Mejorar tu cuenta" textFill="WHITE" />
+                        <HBox alignment="CENTER" prefHeight="56.0" prefWidth="256.0" spacing="10.0">
+                            <children>
+                        <ImageView fitHeight="39.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/user.png" />
+                           </image>
+                        </ImageView>
+                                <Label fx:id="nombreusu" prefHeight="27.0" prefWidth="140.0" text="yyyy" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                  <Pane prefHeight="401.0" prefWidth="1080.0">
+                     <children>
+                        <Pane fx:id="anyadirplaylist" prefHeight="200.0" prefWidth="1080.0" visible="false" />
+                        <ImageView fx:id="anuncio" fitHeight="200.0" fitWidth="613.0" layoutX="229.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../../../img/sponsered.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tituloplaylist" layoutX="265.0" layoutY="86.0" prefHeight="27.0" prefWidth="60.0" text="Título:" textFill="WHITE" visible="false">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="introduceplaylist" layoutX="325.0" layoutY="31.0" prefHeight="27.0" prefWidth="422.0" text="INTRODUCE EL NOMBRE DE TU NUEVA PLAYLIST" textFill="WHITE" visible="false">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="textfieldplaylist" layoutX="436.0" layoutY="88.0" prefHeight="25.0" prefWidth="311.0" visible="false" />
+                        <Button fx:id="botonplaylist" layoutX="514.0" layoutY="151.0" mnemonicParsing="false" onAction="#anyadirplaylist" text="Añadir" visible="false" />
+                        <TableView fx:id="tablaalbum" layoutY="204.0" prefHeight="510.0" prefWidth="1082.0" styleClass="color_primario" stylesheets="@../../../css/estilos.css" visible="false">
+                          <columns>
+                            <TableColumn fx:id="col_anyoalbum" prefWidth="75.0" text="AÑO" />
+                            <TableColumn fx:id="col_tituloalbum" prefWidth="75.0" text="TÍTULO" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <TableView fx:id="tablaartistas" layoutX="1.0" layoutY="208.0" onMouseClicked="#artistas_click" prefHeight="506.0" prefWidth="539.0" styleClass="color_primario" stylesheets="@../../../css/estilos.css" visible="false">
+                           <columns>
+                              <TableColumn fx:id="col_nombreartista" prefWidth="75.0" text="ARTISTA" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <TableView fx:id="tablacancion" layoutX="540.0" layoutY="208.0" onMouseClicked="#cancion_click" prefHeight="507.0" prefWidth="539.0" styleClass="color_primario" stylesheets="@../../../css/estilos.css" visible="false">
+                          <columns>
+                            <TableColumn fx:id="col_cancion" prefWidth="75.0" text="CANCIÓN" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </Pane>
+                    </children>
+                </VBox>
+            <ScrollPane fx:id="scrollpane" prefHeight="497.0" prefWidth="1080.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="1065.0">
+                     <children>
+                        <Pane layoutX="6.0" prefHeight="300.0" prefWidth="1059.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="230.0" text="Para ti" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fotoparati1" fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoparati2" fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoparati3" fitHeight="150.0" fitWidth="191.0" layoutX="440.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoparati4" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoparati5" fitHeight="150.0" fitWidth="200.0" layoutX="846.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="parati1" alignment="CENTER" layoutX="37.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="parati3" alignment="CENTER" layoutX="441.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="parati2" alignment="CENTER" layoutX="239.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="parati4" alignment="CENTER" layoutX="644.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="parati5" alignment="CENTER" layoutX="847.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="6.0" layoutY="300.0" prefHeight="300.0" prefWidth="1059.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="230.0" text="Escuchado recientemente" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fotoescuchado1" fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoescuchado2" fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoescuchado3" fitHeight="150.0" fitWidth="200.0" layoutX="440.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoescuchado4" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoescuchado5" fitHeight="150.0" fitWidth="200.0" layoutX="846.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="escuchado1" alignment="CENTER" layoutX="37.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="escuchado3" alignment="CENTER" layoutX="441.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="escuchado2" alignment="CENTER" layoutX="239.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="escuchado4" alignment="CENTER" layoutX="644.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="escuchado5" alignment="CENTER" layoutX="847.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="6.0" layoutY="600.0" prefHeight="300.0" prefWidth="1059.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="230.0" text="Canciones que te gustan" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fotofavoritas1" fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotofavoritas2" fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotofavoritas3" fitHeight="150.0" fitWidth="200.0" layoutX="440.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotofavoritas4" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotofavoritas5" fitHeight="150.0" fitWidth="200.0" layoutX="846.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="favorita1" alignment="CENTER" layoutX="37.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="favorita3" alignment="CENTER" layoutX="441.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="favorita2" alignment="CENTER" layoutX="239.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="favorita4" alignment="CENTER" layoutX="644.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="favorita5" alignment="CENTER" layoutX="847.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="6.0" layoutY="900.0" prefHeight="300.0" prefWidth="1059.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="230.0" text="Álbum" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fotoalbum1" fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoalbum2" fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoalbum3" fitHeight="150.0" fitWidth="200.0" layoutX="440.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoalbum4" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoalbum5" fitHeight="150.0" fitWidth="200.0" layoutX="846.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="album1" alignment="CENTER" layoutX="37.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="album3" alignment="CENTER" layoutX="441.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="album2" alignment="CENTER" layoutX="239.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="album4" alignment="CENTER" layoutX="644.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="album5" alignment="CENTER" layoutX="847.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="6.0" layoutY="1200.0" prefHeight="300.0" prefWidth="1059.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="230.0" text="Artistas" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fotoartistas1" fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoartistas2" fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoartistas3" fitHeight="150.0" fitWidth="200.0" layoutX="440.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoartistas4" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotoartistas5" fitHeight="150.0" fitWidth="200.0" layoutX="846.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="artistas1" alignment="CENTER" layoutX="37.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="artistas3" alignment="CENTER" layoutX="441.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="artistas2" alignment="CENTER" layoutX="239.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="artistas4" alignment="CENTER" layoutX="644.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="artistas5" alignment="CENTER" layoutX="847.0" layoutY="246.0" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="6.0" layoutY="1500.0" prefHeight="300.0" prefWidth="1059.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="230.0" text="Podcasts" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fotopodcast1" fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotopodcast2" fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotopodcast3" fitHeight="150.0" fitWidth="200.0" layoutX="440.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotopodcast4" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fotopodcast5" fitHeight="150.0" fitWidth="200.0" layoutX="846.0" layoutY="75.0" onMouseClicked="#reproducir" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/kenkro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="podcast1" alignment="CENTER" layoutX="37.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="podcast3" alignment="CENTER" layoutX="441.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="podcast2" alignment="CENTER" layoutX="239.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="podcast4" alignment="CENTER" layoutX="644.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="podcast5" alignment="CENTER" layoutX="847.0" layoutY="246.0" onMouseClicked="#reproducir" prefHeight="33.0" prefWidth="149.0" text="kenkro" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #282828;" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="reproductor" alignment="CENTER" prefHeight="100.0" prefWidth="364.0" spacing="20.0" visible="false">
+                    <children>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../img/kenkro.jpg" />
+                            </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="201.0">
+                            <children>
+                                <Label fx:id="titplay" prefHeight="27.0" prefWidth="212.0" text="You Are My Sunshine" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="artplay" prefHeight="27.0" prefWidth="212.0" text="Jasmin Thompson" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                  <ImageView fx:id="corazonvacio" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#favvacio" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ic_love.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </HBox>
+                <Pane prefHeight="100.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="740.0" spacing="10.0">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="11.0" prefWidth="740.0" spacing="30.0">
+                            <children>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../img/ic_shuffle.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../img/ic_skip_to_start.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../img/ic_play.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../img/ic_end.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../img/ic_repeat.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </HBox>
+                        <HBox spacing="10.0">
+                            <children>
+                                <Label text="00:00" textFill="WHITE" />
+                                <Slider HBox.hgrow="ALWAYS" />
+                                <Label text="02:37" textFill="WHITE" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Pane prefHeight="100.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                    <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../img/ic_devices.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../img/ic_playlist.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../img/ic_volume.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
