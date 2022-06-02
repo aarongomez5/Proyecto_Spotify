@@ -296,36 +296,50 @@ public class HelloController implements Initializable {
         switch (opcion){
             case "inicio":
                 scrollpane.setVisible(true);
+                tablaartistas.setVisible(false);
+                tablacancion.setVisible(false);
                 tablaalbum.setVisible(false);
                 scrollpane.setVvalue(0.0);
                 break;
             case "parati":
                 scrollpane.setVisible(true);
+                tablaartistas.setVisible(false);
+                tablacancion.setVisible(false);
                 tablaalbum.setVisible(false);
                 scrollpane.setVvalue(0);
                 break;
             case "reciente":
                 scrollpane.setVisible(true);
+                tablaartistas.setVisible(false);
+                tablacancion.setVisible(false);
                 tablaalbum.setVisible(false);
                 scrollpane.setVvalue(0.23);
                 break;
             case "megusta":
                 scrollpane.setVisible(true);
+                tablaartistas.setVisible(false);
+                tablacancion.setVisible(false);
                 tablaalbum.setVisible(false);
                 scrollpane.setVvalue(0.46);
                 break;
             case "album":
                 scrollpane.setVisible(true);
+                tablaartistas.setVisible(false);
+                tablacancion.setVisible(false);
                 tablaalbum.setVisible(false);
                 scrollpane.setVvalue(0.69);
                 break;
             case "artistas":
                 scrollpane.setVisible(true);
+                tablaartistas.setVisible(false);
+                tablacancion.setVisible(false);
                 tablaalbum.setVisible(false);
                 scrollpane.setVvalue(0.92);
                 break;
             case "podcast":
                 scrollpane.setVisible(true);
+                tablaartistas.setVisible(false);
+                tablacancion.setVisible(false);
                 tablaalbum.setVisible(false);
                 scrollpane.setVvalue(1.1);
                 break;
@@ -942,6 +956,9 @@ public class HelloController implements Initializable {
 
     @FXML
     void lista(MouseEvent event) {
+        tablacancion.setVisible(false);
+        tablaartistas.setVisible(false);
+        tablaalbum.setVisible(false);
         anuncio.setVisible(false);
         anyadirplaylist.setVisible(true);
         tituloplaylist.setVisible(true);
@@ -952,6 +969,9 @@ public class HelloController implements Initializable {
 
     @FXML
     void anyadirplaylist(ActionEvent event) {
+        tablaartistas.setVisible(false);
+        tablaalbum.setVisible(false);
+        tablacancion.setVisible(false);
         anuncio.setVisible(true);
         anyadirplaylist.setVisible(false);
         tituloplaylist.setVisible(false);
