@@ -1015,6 +1015,7 @@ public class HelloController implements Initializable {
         Artista artista1 = tablaartistas.getSelectionModel().getSelectedItem();
         System.out.println(artista1.getNom_artista());
         tablacancion.setVisible(true);
+        canciontab.clear();
         try{
             Statement stmt = Base.conexion().createStatement();
             ResultSet rs = stmt.executeQuery("SELECT c.titulo FROM cancion c INNER JOIN album al ON al.id = c.album_id INNER JOIN artista art ON art.id = al.artista_id WHERE art.nombre LIKE '" + artista1.getNom_artista() + "'");
